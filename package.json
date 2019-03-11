@@ -1,0 +1,23 @@
+{
+  "name": "food-server",
+  "version": "1.0.0",
+  "description": "Food server is a GraphQL's food server demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marinofelipe/graphql-food-server.git"
+  },
+  "author": "Felipe Marino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marinofelipe/graphql-food-server/issues"
+  },
+  "homepage": "https://github.com/marinofelipe/graphql-food-server#readme",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.1.1"
+  }
+}
