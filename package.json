@@ -2,7 +2,7 @@
   "name": "food-server",
   "version": "1.0.0",
   "description": "Food server is a GraphQL's food server demo",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
