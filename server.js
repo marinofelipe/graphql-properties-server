@@ -3,6 +3,7 @@ const { ApolloServer, gql } = require('apollo-server');
 // This is a (sample) collection of dishes we'll be able to query
 // the GraphQL server for.  A more complete example might fetch
 // from an existing data source like a REST API or database.
+
 const properties = [
     {
         id: 0,
@@ -116,13 +117,21 @@ const properties = [
         likes: 0,
         price: 450000,
     }
-  ];
+];
+
+const propertiesList = {
+    properties
+}
 
 // The GraphQL schema
 const typeDefs = gql`
 
   # property type and query
-  type Property {
+  type PropertyListType {
+    properties: [PropertyType]
+  }
+  
+  type PropertyType {
     "Information about an available property."
     id: ID!
     title: String
@@ -132,7 +141,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    propertyList: [Property]
+    propertyList: PropertyListType
     #getDishes: [Dish]
     #getWelcomeText: [Dish]
   }
@@ -151,7 +160,7 @@ const typeDefs = gql`
 // A map of functions which return data for the schema.
 const resolvers = {
   Query: {
-    propertyList: () => properties,
+    propertyList: () => propertiesList,
     // getWelcomeText: () => 'Hello 🙋. Your 🍤 will be ready soon!',
   },
   Mutation: {
