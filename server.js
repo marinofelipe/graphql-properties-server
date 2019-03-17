@@ -49,7 +49,7 @@ const resolvers = {
   },
   Mutation: {
     likeProperty: async (_, { id }) => {
-        let property = properties.find(function(property) {
+        let property = propertyList.properties.find(function(property) {
             return property.id == id
         })
         property.likes += 1
